@@ -1,0 +1,43 @@
+.gallery {
+    .gallery-carousel {
+        filter: drop-shadow(1rem 1rem 1rem rgba($color-light-black, .7));
+        .img-wrapper {
+            height: 36rem;
+            @include breakpoint(md) {
+                height: 25rem;
+            }
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    
+        .slick-dots {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0 0 1rem;
+            li {
+                padding: .5rem;
+                button {
+                    border: none;
+                    background-color: $color-white;
+                    text-indent: -9999999px;
+                    border-radius: 100%;
+                    height: .75rem;
+                    width: .75rem;
+                }
+                &.slick-active {
+                    button {
+                        background-color: $color-secondary;
+                    }
+                }
+            }
+        }
+    }
+}

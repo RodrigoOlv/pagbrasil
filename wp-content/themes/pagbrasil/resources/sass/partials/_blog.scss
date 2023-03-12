@@ -1,0 +1,116 @@
+.blog {
+    padding: 5rem 0;
+    .navlink {
+        position: relative;
+        text-decoration: none;
+        color: $color-primary;
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 0;
+            height: 0.25rem;
+            background-color: $color-secondary;
+            border-radius: 0.25rem;
+            transition: $transition-default;
+        }
+        &:hover {
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+    .blog-item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+        a {
+            color: $color-primary;
+            text-decoration: none !important;
+            transition: $transition-default;
+            .img-wrapper {
+                position: relative;
+                display: block;
+                height: 20rem;
+                overflow: hidden;
+                filter: drop-shadow(1rem 1rem 1rem rgba($color-light-black, .7));
+                img {
+                    object-fit: cover;
+                    object-position: center;
+                    height: 100%;
+                    width: 100%;
+                    transition: all ease .5s;
+                    transform-style: preserve-3d;
+                }
+                .category {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: $color-primary;
+                    padding: .5rem;
+                    color: $color-white;
+                }
+            }
+            &:hover {
+                color: $color-secondary;
+                .img-wrapper img {
+                    transform: translateZ(0) scale3d(1.2,1.2,1) rotateX(0deg) rotateY(0deg) rotate(0deg) skew(0deg,0deg);
+                }
+                .title {
+                    color: $color-secondary;
+                }
+            }
+            .title {
+                margin-top: 1rem;
+                min-height: 4.5rem;
+                color: $color-primary;
+            }
+        }
+    }
+
+    .pagination {
+        margin-top: 5rem;
+        a {
+            font-weight: 700;
+            margin: 1rem;
+            text-decoration: none !important;
+            transition: $transition-default;
+            &:hover {
+                color: $color-secondary;
+            }
+        }
+        .current {
+            font-weight: 700;
+            margin: 1rem;
+            color: $color-secondary;
+        }
+    }
+
+    .slick-dots {
+        position: absolute;
+        right: 0;
+        bottom: -2rem;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0 0 1rem;
+        li {
+            padding: .5rem;
+            button {
+                border: none;
+                background-color: $color-primary;
+                text-indent: -9999999px;
+                border-radius: 100%;
+                height: .75rem;
+                width: .75rem;
+            }
+            &.slick-active {
+                button {
+                    background-color: $color-secondary;
+                }
+            }
+        }
+    }
+}

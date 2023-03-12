@@ -1,0 +1,84 @@
+.main-header {
+    background-color: $color-white;
+    position: sticky;
+    top: 0;
+    transition: $transition-default;
+    z-index: 10;
+
+    .navbar-brand {
+        .logo-color {
+            display: block;
+        }
+        .logo-light {
+            display: none;
+        }
+    }
+
+    .menu-item {
+        a {
+            position: relative;
+            text-decoration: none;
+            color: $color-primary;
+            transition: $transition-default;
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: -0.5rem;
+                left: 0;
+                width: 0;
+                height: 0.25rem;
+                background-color: $color-secondary;
+                border-radius: 0.25rem;
+                transition: $transition-default;
+            }
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+        &.current-menu-item {
+            a::after {
+                width: 100%;
+            }
+        }
+        & + .menu-item {
+            margin-left: 1.5rem;
+        }
+    }
+
+    .navbar-toggler i {
+        font-size: 2rem;
+        color: $color-primary;
+        transition: $transition-default;
+    }
+
+    &.bg-primary {
+        .navbar-brand {
+            .logo-color {
+                display: none;
+            }
+            .logo-light {
+                display: block;
+            }
+        }
+        .navbar-toggler i {
+            color: $color-white;
+        }
+        .menu-item a {
+            color: $color-white;
+        }
+        
+    }
+    @include breakpoint(md) {
+        .menu-item {
+            margin: .5rem auto !important;
+            a {
+                text-align: center;
+            }
+        }
+        .navbar-nav {
+            padding: 1.5rem 0;
+        }
+    }
+}

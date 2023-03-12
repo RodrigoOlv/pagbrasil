@@ -1,0 +1,19 @@
+.content {
+    padding: 5rem 0;
+    
+    h2, h3 {
+        color: $color-primary;
+    }
+
+    p {
+        color: $color-light-black;
+        font-size: 1.25rem;
+    }
+
+    a {
+        text-decoration: none !important;
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+}

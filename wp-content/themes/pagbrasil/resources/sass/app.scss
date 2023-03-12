@@ -1,0 +1,19 @@
+// Configs
+@import './config/variables';
+@import './config/vendor';
+@import './config/utils';
+@import './config/fonts';
+@import './config/general';
+
+// Pages
+@import './pages/home';
+
+// Partials
+@import './partials/header';
+@import './partials/hero';
+@import './partials/columns';
+@import './partials/gallery';
+@import './partials/blog';
+@import './partials/footer';
+@import './partials/content';
+@import './partials/table';

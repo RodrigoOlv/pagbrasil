@@ -1,0 +1,49 @@
+.main-footer {
+    padding: 3rem 0;
+    background-color: $color-primary;
+    .menu-item {
+        a {
+            color: $color-white;
+            text-decoration: none !important;
+            &:hover {
+                color: $color-secondary;
+            }
+        }
+    }
+    .social-media {
+        a {
+            color: $color-white;
+            font-size: 2rem;
+            text-decoration: none !important;
+            & + a {
+                margin-left: 1.5rem;
+            }
+
+            &:hover {
+                color: $color-secondary;
+            }
+        }
+    }
+    @include breakpoint(md) {
+        .navbar-brand {
+            display: block;
+            margin: auto;
+            img {
+                display: block;
+                margin: auto;
+            }
+        }
+        .navbar-nav {
+            margin: 1rem auto;
+            .menu-item {
+                text-align: center;
+                margin: .5rem;
+            }
+        }
+        .social-media {
+            a {
+                margin: .75rem !important;
+            }
+        }
+    }
+}
